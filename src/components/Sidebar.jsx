@@ -37,8 +37,10 @@ export default function Sidebar({
     <aside className={`sidebar ${mobileOpen ? 'mobile-open' : ''}`}>
       <div className="sidebar-header">
         <div className="brand-logo" onClick={() => setActiveTab('overview')}>
-          <div className="logo-symbol">P</div>
-          <span>FOLIO</span>
+          <div className="logo-symbol">
+            <LayoutDashboardIcon size={18} />
+          </div>
+          <span>METRIX</span>
         </div>
         <button
           className="sidebar-close-btn"
