@@ -75,10 +75,10 @@ export default function Sidebar({
       <div className="sidebar-footer">
         <div className="sidebar-user-card" onClick={onOpenProfile}>
           <div className="avatar">
-            <span>SR</span>
+            <span>SA</span>
           </div>
           <div className="user-info">
-            <span className="user-name">Satria Ramadhan</span>
+            <span className="user-name">Satrio Athallah</span>
             <span className="user-role">Lead Architect</span>
           </div>
         </div>

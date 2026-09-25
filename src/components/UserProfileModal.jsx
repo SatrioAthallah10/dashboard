@@ -16,9 +16,9 @@ export default function UserProfileModal({ isOpen, onClose }) {
 
         <div className="modal-body">
           <div className="profile-hero">
-            <div className="profile-avatar-lg">SR</div>
+            <div className="profile-avatar-lg">SA</div>
             <div className="profile-hero-info">
-              <h2>Satria Ramadhan</h2>
+              <h2>Satrio Athallah</h2>
               <p>Senior Full-Stack Engineer</p>
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function UserProfileModal({ isOpen, onClose }) {
 
           <div className="profile-field-group">
             <div className="profile-field-label">Email Address</div>
-            <div className="profile-field-value">satria.ramadhan@portfolio.dev</div>
+            <div className="profile-field-value">satrioathallah13@gmail.com</div>
           </div>
 
           <div className="profile-field-group">

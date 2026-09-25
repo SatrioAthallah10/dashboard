@@ -83,7 +83,7 @@ export default function Header({
 
         <button className="header-user-btn" onClick={onOpenProfile}>
           <div className="avatar" style={{ width: '28px', height: '28px', fontSize: '0.75rem' }}>
-            <span>SR</span>
+            <span>SA</span>
           </div>
           <span style={{ fontSize: '0.85rem', fontWeight: 700 }}>Profile</span>
         </button>

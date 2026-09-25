@@ -56,7 +56,7 @@ export default function App() {
       id: newId,
       name: 'New Developer',
       avatarInitials: 'ND',
-      email: `dev${newId}@example.com`,
+      email: 'satrioathallah13@gmail.com',
       role: 'Full-Stack Developer',
       status: 'Active',
       amount: '$2,500.00',
@@ -189,7 +189,7 @@ export default function App() {
                 {activeTab === 'activity' && 'Audit Log & Activity'}
                 {activeTab === 'settings' && 'Platform Settings'}
               </h1>
-              <p>Welcome back, Satria. Here is your platform metrics performance.</p>
+              <p>Welcome back, Satrio. Here is your platform metrics performance.</p>
             </div>
 
             <div className="action-group">
