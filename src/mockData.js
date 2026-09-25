@@ -20,3 +20,10 @@ export const initialActivities = [
   { id: 4, user: 'Security Bot', action: 'blocked suspicious IP address 192.168.1.104', timestamp: '3 hours ago', type: 'security' },
   { id: 5, user: 'Stripe Gateway', action: 'processed subscription payout of $12,450.00', timestamp: '5 hours ago', type: 'payment' }
 ];
+
+export const initialNotifications = [
+  { id: 1, title: 'New System Build', desc: 'Production v2.4 build successfully deployed', time: '5m ago', read: false, type: 'system' },
+  { id: 2, title: 'Security Alert', desc: 'Blocked unauthorized login attempt from 192.168.1.104', time: '20m ago', read: false, type: 'security' },
+  { id: 3, title: 'Payout Received', desc: 'Stripe processed subscription payout of $12,450.00', time: '1h ago', read: false, type: 'payment' },
+  { id: 4, title: 'Team Update', desc: 'Sophia Chen updated Q4 roadmap milestones', time: '3h ago', read: true, type: 'user' }
+];

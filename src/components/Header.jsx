@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   SearchIcon,
   BellIcon,
   MenuIcon,
-  XIcon,
-  UserIcon
+  XIcon
 } from './Icons';
 
 export default function Header({
@@ -14,8 +13,55 @@ export default function Header({
   setCurrentState,
   mobileOpen,
   setMobileOpen,
-  onOpenProfile
+  onOpenProfile,
+  notifications = [],
+  setNotifications
 }) {
+  const [notifOpen, setNotifOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const unreadCount = notifications.filter((n) => !n.read).length;
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setNotifOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleMarkAllRead = () => {
+    if (!setNotifications) return;
+    setNotifications(notifications.map((n) => ({ ...n, read: true })));
+  };
+
+  const handleToggleRead = (id) => {
+    if (!setNotifications) return;
+    setNotifications(
+      notifications.map((n) => (n.id === id ? { ...n, read: !n.read } : n))
+    );
+  };
+
+  const handleClearAll = () => {
+    if (!setNotifications) return;
+    setNotifications([]);
+  };
+
+  const getNotifIcon = (type) => {
+    switch (type) {
+      case 'security':
+        return '🔒';
+      case 'payment':
+        return '💳';
+      case 'user':
+        return '👤';
+      default:
+        return '⚡';
+    }
+  };
+
   return (
     <header className="header">
       <div className="header-left">
@@ -76,10 +122,70 @@ export default function Header({
           </button>
         </div>
 
-        <button className="icon-btn" title="Notifications">
-          <BellIcon size={18} />
-          <span className="notification-dot"></span>
-        </button>
+        <div className="notification-wrapper" ref={dropdownRef}>
+          <button
+            className="icon-btn"
+            title="Notifications"
+            onClick={() => setNotifOpen(!notifOpen)}
+          >
+            <BellIcon size={18} />
+            {unreadCount > 0 && (
+              <span className="notification-badge">{unreadCount}</span>
+            )}
+          </button>
+
+          {notifOpen && (
+            <div className="notification-dropdown">
+              <div className="notif-header">
+                <div className="notif-title">
+                  <span>Notifications</span>
+                  {unreadCount > 0 && (
+                    <span className="nav-badge" style={{ fontSize: '0.7rem' }}>
+                      {unreadCount} new
+                    </span>
+                  )}
+                </div>
+                {unreadCount > 0 && (
+                  <button className="notif-mark-read" onClick={handleMarkAllRead}>
+                    Mark all read
+                  </button>
+                )}
+              </div>
+
+              <div className="notif-list">
+                {notifications.length === 0 ? (
+                  <div style={{ padding: '24px', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>
+                    No notifications
+                  </div>
+                ) : (
+                  notifications.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`notif-item ${!item.read ? 'unread' : ''}`}
+                      onClick={() => handleToggleRead(item.id)}
+                    >
+                      <div className="notif-icon">{getNotifIcon(item.type)}</div>
+                      <div className="notif-content">
+                        <div className="notif-item-title">{item.title}</div>
+                        <div className="notif-item-desc">{item.desc}</div>
+                        <div className="notif-item-time">{item.time}</div>
+                      </div>
+                      {!item.read && <div className="notif-unread-dot"></div>}
+                    </div>
+                  ))
+                )}
+              </div>
+
+              {notifications.length > 0 && (
+                <div className="notif-footer">
+                  <button className="notif-clear-btn" onClick={handleClearAll}>
+                    Clear all notifications
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
 
         <button className="header-user-btn" onClick={onOpenProfile}>
           <div className="avatar" style={{ width: '28px', height: '28px', fontSize: '0.75rem' }}>

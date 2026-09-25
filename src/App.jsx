@@ -8,7 +8,7 @@ import RecentActivity from './components/RecentActivity';
 import { LoadingView, EmptyView, ErrorView } from './components/StateViews';
 import UserProfileModal from './components/UserProfileModal';
 import RowDetailModal from './components/RowDetailModal';
-import { initialTableData, initialActivities } from './mockData';
+import { initialTableData, initialActivities, initialNotifications } from './mockData';
 import { PlusIcon } from 'lucide-react';
 import './index.css';
 
@@ -25,6 +25,7 @@ export default function App() {
   const [selectedRow, setSelectedRow] = useState(null);
   const [tableData, setTableData] = useState(initialTableData);
   const [activities, setActivities] = useState(initialActivities);
+  const [notifications, setNotifications] = useState(initialNotifications);
 
   const filteredData = tableData.filter((item) => {
     const matchesSearch =
@@ -63,6 +64,17 @@ export default function App() {
       date: new Date().toISOString().split('T')[0]
     };
     setTableData([newEntry, ...tableData]);
+    setNotifications([
+      {
+        id: Date.now(),
+        title: 'Record Created',
+        desc: `Added new developer record #${newId}`,
+        time: 'Just now',
+        read: false,
+        type: 'user'
+      },
+      ...notifications
+    ]);
   };
 
   const renderMainContent = () => {
@@ -178,6 +190,8 @@ export default function App() {
           mobileOpen={mobileOpen}
           setMobileOpen={setMobileOpen}
           onOpenProfile={() => setIsProfileOpen(true)}
+          notifications={notifications}
+          setNotifications={setNotifications}
         />
 
         <main className="content-area">
