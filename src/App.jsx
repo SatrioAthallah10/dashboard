@@ -157,8 +157,8 @@ export default function App() {
               <div className="profile-field-value">Production Cluster Node #1</div>
             </div>
             <div className="profile-field-group">
-              <div className="profile-field-label">Design Pattern</div>
-              <div className="profile-field-value">Brutalist Neo-Editorial (Portfolio Strict)</div>
+              <div className="profile-field-label">System Version</div>
+              <div className="profile-field-value">v2.4.0 (Production Build)</div>
             </div>
             <div className="profile-field-group">
               <div className="profile-field-label">API Rate Limit</div>
