@@ -32,6 +32,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  width: 100%;
 }
 
 button, input, select, textarea {
@@ -41,12 +42,14 @@ button, input, select, textarea {
 .dashboard-app {
   display: flex;
   min-height: 100vh;
+  width: 100%;
   position: relative;
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 .sidebar {
-  width: 280px;
+  width: 250px;
   background-color: #f5f5f5;
   border-right: 4px solid var(--border-color);
   display: flex;
@@ -60,7 +63,7 @@ button, input, select, textarea {
 }
 
 .sidebar-header {
-  padding: 24px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,19 +71,19 @@ button, input, select, textarea {
 }
 
 .brand-logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   letter-spacing: -0.03em;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
   user-select: none;
 }
 
 .logo-symbol {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   background-color: var(--text-primary);
   color: var(--bg-color);
   display: flex;
@@ -104,10 +107,10 @@ button, input, select, textarea {
 
 .sidebar-nav {
   flex: 1;
-  padding: 24px 16px;
+  padding: 20px 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   overflow-y: auto;
 }
 
@@ -117,20 +120,20 @@ button, input, select, textarea {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-secondary);
-  padding: 8px 12px;
-  margin-top: 12px;
+  padding: 6px 10px;
+  margin-top: 8px;
 }
 
 .nav-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 16px;
+  padding: 10px 14px;
   border-radius: 999px;
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.2s ease;
   border: 2px solid transparent;
@@ -139,7 +142,7 @@ button, input, select, textarea {
 .nav-item-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .nav-item:hover {
@@ -168,7 +171,7 @@ button, input, select, textarea {
 }
 
 .sidebar-footer {
-  padding: 20px 16px;
+  padding: 16px 14px;
   border-top: 4px solid var(--border-color);
   background-color: #ffffff;
 }
@@ -176,7 +179,7 @@ button, input, select, textarea {
 .sidebar-user-card {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   padding: 8px;
   border-radius: 12px;
   cursor: pointer;
@@ -189,8 +192,8 @@ button, input, select, textarea {
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: #1A1A1A;
   color: #ffffff;
@@ -198,7 +201,7 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   border: 2px solid var(--border-color);
   overflow: hidden;
   flex-shrink: 0;
@@ -218,7 +221,7 @@ button, input, select, textarea {
 
 .user-name {
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -234,11 +237,14 @@ button, input, select, textarea {
 
 .main-wrapper {
   flex: 1;
-  margin-left: 280px;
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  overflow-x: hidden;
 }
 
 .header {
@@ -248,11 +254,12 @@ button, input, select, textarea {
   background-color: rgba(245, 245, 245, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 4px solid var(--border-color);
-  padding: 16px 32px;
+  padding: 14px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
+  width: 100%;
 }
 
 .header-left {
@@ -260,7 +267,7 @@ button, input, select, textarea {
   align-items: center;
   gap: 16px;
   flex: 1;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .mobile-toggle-btn {
@@ -282,11 +289,11 @@ button, input, select, textarea {
 
 .search-input {
   width: 100%;
-  padding: 10px 16px 10px 42px;
+  padding: 9px 16px 9px 40px;
   border: 2px solid var(--border-color);
   border-radius: 999px;
   background-color: #ffffff;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-primary);
   outline: none;
@@ -323,7 +330,7 @@ button, input, select, textarea {
 .header-controls {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .state-switcher {
@@ -332,16 +339,16 @@ button, input, select, textarea {
   background-color: #ffffff;
   border: 2px solid var(--border-color);
   border-radius: 999px;
-  padding: 4px;
-  gap: 4px;
+  padding: 3px;
+  gap: 3px;
 }
 
 .state-btn {
   background: transparent;
   border: none;
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 999px;
-  font-size: 0.8rem;
+  font-size: 0.775rem;
   font-weight: 700;
   color: var(--text-secondary);
   cursor: pointer;
@@ -375,8 +382,8 @@ button, input, select, textarea {
 .icon-btn {
   background-color: #ffffff;
   border: 2px solid var(--border-color);
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -393,10 +400,10 @@ button, input, select, textarea {
 
 .notification-dot {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 10px;
-  height: 10px;
+  top: 3px;
+  right: 3px;
+  width: 9px;
+  height: 9px;
   background-color: #c5221f;
   border-radius: 50%;
   border: 2px solid #ffffff;
@@ -405,10 +412,10 @@ button, input, select, textarea {
 .header-user-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background-color: #ffffff;
   border: 2px solid var(--border-color);
-  padding: 4px 12px 4px 6px;
+  padding: 3px 10px 3px 5px;
   border-radius: 999px;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -419,11 +426,14 @@ button, input, select, textarea {
 }
 
 .content-area {
-  padding: 32px;
+  padding: 24px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .dashboard-title-bar {
@@ -435,14 +445,14 @@ button, input, select, textarea {
 }
 
 .title-group h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .title-group p {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-top: 4px;
 }
 
@@ -456,13 +466,13 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
+  padding: 9px 18px;
   background-color: var(--text-primary);
   color: #ffffff;
   border: 2px solid var(--border-color);
   border-radius: 999px;
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -480,23 +490,25 @@ button, input, select, textarea {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
 }
 
 .stat-card {
   background-color: #ffffff;
   border: 3px solid var(--border-color);
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 0;
 }
 
 .stat-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: 4px 4px 0px var(--border-color);
 }
 
@@ -507,9 +519,9 @@ button, input, select, textarea {
 }
 
 .stat-icon-wrapper {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   border: 2px solid var(--border-color);
   background-color: var(--bg-color);
   display: flex;
@@ -521,9 +533,9 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px;
+  padding: 3px 8px;
   border-radius: 999px;
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-weight: 700;
   border: 1px solid var(--border-color);
 }
@@ -539,23 +551,23 @@ button, input, select, textarea {
 }
 
 .stat-value {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .stat-title {
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   font-weight: 600;
 }
 
 .mini-chart {
   display: flex;
   align-items: flex-end;
-  gap: 6px;
-  height: 36px;
-  margin-top: 8px;
+  gap: 5px;
+  height: 32px;
+  margin-top: 6px;
 }
 
 .chart-bar {
@@ -567,18 +579,21 @@ button, input, select, textarea {
 
 .dashboard-layout-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  gap: 24px;
+  width: 100%;
 }
 
 .card-panel {
   background-color: #ffffff;
   border: 3px solid var(--border-color);
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
+  min-width: 0;
+  width: 100%;
 }
 
 .panel-header {
@@ -587,12 +602,12 @@ button, input, select, textarea {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   border-bottom: 2px solid #eaeaea;
 }
 
 .panel-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -601,20 +616,21 @@ button, input, select, textarea {
 
 .table-wrapper {
   overflow-x: auto;
-  margin: 0 -24px;
-  padding: 0 24px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .custom-table {
   width: 100%;
+  min-width: 580px;
   border-collapse: separate;
   border-spacing: 0;
   text-align: left;
 }
 
 .custom-table th {
-  padding: 14px 16px;
-  font-size: 0.8rem;
+  padding: 12px 14px;
+  font-size: 0.775rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -632,8 +648,8 @@ button, input, select, textarea {
 }
 
 .custom-table td {
-  padding: 16px;
-  font-size: 0.9rem;
+  padding: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   border-bottom: 1px solid #eaeaea;
   vertical-align: middle;
@@ -651,9 +667,9 @@ button, input, select, textarea {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 999px;
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-weight: 700;
   border: 1px solid var(--border-color);
 }
@@ -681,12 +697,12 @@ button, input, select, textarea {
 .table-user {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .table-user-avatar {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: #1A1A1A;
   color: #ffffff;
@@ -694,23 +710,31 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.775rem;
   border: 2px solid var(--border-color);
+  flex-shrink: 0;
 }
 
 .table-user-info {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .table-user-name {
   font-weight: 700;
   color: var(--text-primary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .table-user-email {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   color: var(--text-secondary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .pagination {
@@ -718,13 +742,13 @@ button, input, select, textarea {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
-  padding-top: 16px;
+  gap: 14px;
+  padding-top: 14px;
   border-top: 2px solid #eaeaea;
 }
 
 .pagination-info {
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   color: var(--text-secondary);
   font-weight: 600;
 }
@@ -732,18 +756,18 @@ button, input, select, textarea {
 .pagination-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .page-btn {
-  min-width: 36px;
-  height: 36px;
-  padding: 0 10px;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
   border: 2px solid var(--border-color);
   border-radius: 999px;
   background-color: #ffffff;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.825rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -769,14 +793,14 @@ button, input, select, textarea {
 .activity-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .activity-item {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  padding: 12px;
+  gap: 12px;
+  padding: 10px;
   border-radius: 12px;
   border: 2px solid #eaeaea;
   transition: border-color 0.2s ease;
@@ -787,8 +811,8 @@ button, input, select, textarea {
 }
 
 .activity-icon {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   border: 2px solid var(--border-color);
   display: flex;
@@ -801,14 +825,15 @@ button, input, select, textarea {
 .activity-details {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
   flex: 1;
 }
 
 .activity-text {
-  font-size: 0.875rem;
+  font-size: 0.825rem;
   font-weight: 600;
   color: var(--text-primary);
+  line-height: 1.4;
 }
 
 .activity-text strong {
@@ -816,7 +841,7 @@ button, input, select, textarea {
 }
 
 .activity-time {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   color: var(--text-secondary);
 }
 
@@ -825,17 +850,18 @@ button, input, select, textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 24px;
+  padding: 50px 20px;
   text-align: center;
   background-color: #ffffff;
   border: 3px solid var(--border-color);
   border-radius: 16px;
-  gap: 16px;
+  gap: 14px;
+  width: 100%;
 }
 
 .state-illustration {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   border: 3px solid var(--border-color);
   display: flex;
@@ -845,14 +871,14 @@ button, input, select, textarea {
 }
 
 .state-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 800;
 }
 
 .state-desc {
   color: var(--text-secondary);
-  max-width: 400px;
-  font-size: 0.95rem;
+  max-width: 380px;
+  font-size: 0.9rem;
 }
 
 .skeleton-box {
@@ -880,7 +906,7 @@ button, input, select, textarea {
   height: 120px;
   border: 3px solid #dddddd;
   border-radius: 16px;
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -895,7 +921,7 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
   animation: fadeIn 0.2s ease;
 }
 
@@ -904,14 +930,14 @@ button, input, select, textarea {
   border: 4px solid var(--border-color);
   border-radius: 20px;
   width: 100%;
-  max-width: 540px;
+  max-width: 500px;
   overflow: hidden;
   box-shadow: 8px 8px 0px var(--border-color);
   animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .modal-header {
-  padding: 20px 24px;
+  padding: 16px 20px;
   border-bottom: 4px solid var(--border-color);
   display: flex;
   justify-content: space-between;
@@ -920,7 +946,7 @@ button, input, select, textarea {
 }
 
 .modal-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
 }
 
@@ -928,8 +954,8 @@ button, input, select, textarea {
   background: transparent;
   border: 2px solid var(--border-color);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -945,21 +971,21 @@ button, input, select, textarea {
 }
 
 .modal-body {
-  padding: 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .profile-hero {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 .profile-avatar-lg {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   border: 4px solid var(--border-color);
   background-color: #1A1A1A;
@@ -967,24 +993,25 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 800;
 }
 
 .profile-hero-info h2 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 800;
 }
 
 .profile-hero-info p {
   color: var(--text-secondary);
   font-weight: 600;
+  font-size: 0.875rem;
 }
 
 .profile-stats-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 10px;
   text-align: center;
 }
 
@@ -992,16 +1019,16 @@ button, input, select, textarea {
   background-color: var(--bg-color);
   border: 2px solid var(--border-color);
   border-radius: 12px;
-  padding: 12px;
+  padding: 10px;
 }
 
 .profile-stat-num {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
 }
 
 .profile-stat-label {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   color: var(--text-secondary);
   font-weight: 700;
   margin-top: 2px;
@@ -1010,21 +1037,22 @@ button, input, select, textarea {
 .profile-field-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .profile-field-label {
-  font-size: 0.8rem;
+  font-size: 0.775rem;
   font-weight: 700;
   text-transform: uppercase;
   color: var(--text-secondary);
 }
 
 .profile-field-value {
-  padding: 10px 14px;
+  padding: 8px 12px;
   border: 2px solid var(--border-color);
   border-radius: 10px;
   font-weight: 600;
+  font-size: 0.875rem;
   background-color: var(--bg-color);
 }
 
@@ -1038,7 +1066,7 @@ button, input, select, textarea {
   to { transform: translateY(0); opacity: 1; }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .dashboard-layout-grid {
     grid-template-columns: 1fr;
   }
@@ -1046,6 +1074,7 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
   .sidebar {
+    width: 270px;
     transform: translateX(-100%);
   }
 
@@ -1060,6 +1089,7 @@ button, input, select, textarea {
 
   .main-wrapper {
     margin-left: 0;
+    width: 100%;
   }
 
   .mobile-toggle-btn {
@@ -1067,7 +1097,7 @@ button, input, select, textarea {
   }
 
   .header {
-    padding: 16px;
+    padding: 14px 16px;
     flex-wrap: wrap;
   }
 
@@ -1077,7 +1107,7 @@ button, input, select, textarea {
 
   .content-area {
     padding: 16px;
-    gap: 20px;
+    gap: 16px;
   }
 
   .state-switcher {
@@ -1091,7 +1121,7 @@ button, input, select, textarea {
   }
 
   .title-group h1 {
-    font-size: 1.75rem;
+    font-size: 1.6rem;
   }
 
   .stat-card {
